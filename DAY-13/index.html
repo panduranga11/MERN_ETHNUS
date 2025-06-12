@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Array Methods</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .output {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Array Methods with Examples</h1>
+
+  <div class="output" id="result"></div>
+
+  <script>
+    let result = "";
+
+    const arr = [10, 20, 30, 40, 50];
+    result += "<strong>Original Array:</strong> " + JSON.stringify(arr) + "<br><br>";
+
+    // 1. push()
+    arr.push(60);
+    result += "<strong>push(60):</strong> " + JSON.stringify(arr) + "<br><br>";
+
+    // 2. pop()
+    arr.pop();
+    result += "<strong>pop():</strong> " + JSON.stringify(arr) + "<br><br>";
+
+    // 3. shift()
+    arr.shift();
+    result += "<strong>shift():</strong> " + JSON.stringify(arr) + "<br><br>";
+
+    // 4. unshift()
+    arr.unshift(5);
+    result += "<strong>unshift(5):</strong> " + JSON.stringify(arr) + "<br><br>";
+
+    // 5. map()
+    const mapped = arr.map(x => x * 2);
+    result += "<strong>map(x => x * 2):</strong> " + JSON.stringify(mapped) + "<br><br>";
+
+    // 6. filter()
+    const filtered = arr.filter(x => x > 20);
+    result += "<strong>filter(x > 20):</strong> " + JSON.stringify(filtered) + "<br><br>";
+
+    // 7. reduce()
+    const reduced = arr.reduce((total, x) => total + x, 0);
+    result += "<strong>reduce(sum):</strong> " + reduced + "<br><br>";
+
+    // 8. forEach()
+    let forEachOutput = "";
+    arr.forEach(x => forEachOutput += x + " ");
+    result += "<strong>forEach():</strong> " + forEachOutput.trim() + "<br><br>";
+
+    // 9. slice()
+    const sliced = arr.slice(1, 3);
+    result += "<strong>slice(1, 3):</strong> " + JSON.stringify(sliced) + "<br><br>";
+
+    // 10. splice()
+    arr.splice(2, 1, 99);
+    result += "<strong>splice(2, 1, 99):</strong> " + JSON.stringify(arr) + "<br><br>";
+
+    // 11. find()
+    const found = arr.find(x => x > 30);
+    result += "<strong>find(x > 30):</strong> " + found + "<br><br>";
+
+    // 12. includes()
+    const inc = arr.includes(99);
+    result += "<strong>includes(99):</strong> " + inc + "<br><br>";
+
+    // Show result
+    document.getElementById("result").innerHTML = result;
+  </script>
+
+</body>
+</html>

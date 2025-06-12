@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic Formatting using Inline CSS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 20px 0; /* top & bottom only */
+      /* no flex or text-align here */
+    }
+
+    /* Center all blocks horizontally */
+    h2, .block {
+      max-width: 1200px;
+      margin: 15px auto; /* auto left and right margins center horizontally */
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      background-color: maroon;
+      padding: 15px 30px;
+      font-size: 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .block {
+      padding: 25px 30px;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: justify;
+      color: black;
+    }
+
+    .orange {
+      background-color: rgba(255, 165, 0, 0.9);
+      cursor: pointer;
+    }
+
+    .yellow {
+      background-color: rgba(255, 255, 0, 0.85);
+    }
+
+    .gray {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <h2>Basic Formatting using Inline CSS</h2>
+
+  <div class="block orange">
+    In this exercise, the different colored boxes help us demonstrate formatting with inline CSS as requested. These are text blocks positioned on top of a colorful background image. The text has some formatting such as bold, italic, alignment, color, and margin, and their appearance is controlled directly using inline styles or defined classes. Play around with position, margin, color, and padding to adjust to your needs.
+  </div>
+
+  <div class="block yellow">
+    In this second block, the yellow-tinted section shows how text appears in another vivid block layout example. The use of background color visibility blends nicely. Make sure your content remains readable. This text could change the formatting of certain types of document content by wrapping it with the appropriate tags or styles. You can also include custom classes for consistent design.
+  </div>
+
+  <div class="block gray">
+    In the third block, the grayish tinted area uses a lightweight transparent effect to be readable on a scenic picture. This sort of effect enhances contrast while preserving themed feel. You can modify transparency and colors depending on contrast needs. Each section here shows how block layout and inline CSS styling help produce organized content over a background image.
+  </div>
+</body>
+</html>

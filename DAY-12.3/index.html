@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Repeater</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: navy;
+        }
+    </style>
+    <script>
+        function repeatText() {
+            let times = prompt("Enter how many times the text should repeat:");
+            let count = parseInt(times);
+            let resultDiv = document.getElementById("result");
+
+            if (isNaN(count) || count < 1) {
+                resultDiv.textContent = "❌ Please enter a valid positive number.";
+                resultDiv.style.color = "red";
+                return;
+            }
+
+            let text = prompt("Enter the text to repeat:");
+
+            if (!text || text.trim() === "") {
+                resultDiv.textContent = "❌ Text cannot be empty.";
+                resultDiv.style.color = "red";
+                return;
+            }
+
+            let output = "";
+            for (let i = 1; i <= count; i++) {
+                output += i + ". " + text + "<br>";
+            }
+
+            resultDiv.innerHTML = output;
+            resultDiv.style.color = "navy";
+        }
+
+        // Run when page loads
+        window.onload = repeatText;
+    </script>
+</head>
+<body>
+    <h2>Text Repeater</h2>
+    <div id="result">Waiting for input...</div>
+</body>
+</html>

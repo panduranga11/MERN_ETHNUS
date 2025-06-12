@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prime Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 500px;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>Prime Number Generator</h2>
+    <table>
+      <tr>
+        <td>Start</td>
+        <td><input type="number" id="start" placeholder="Enter start number"></td>
+      </tr>
+      <tr>
+        <td>End</td>
+        <td><input type="number" id="end" placeholder="Enter end number"></td>
+      </tr>
+      <tr>
+        <td>Prime Number</td>
+        <td><textarea id="output" readonly></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <button onclick="generatePrimes()">Generate</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    function isPrime(num) {
+      if (num < 2) return false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+      }
+      return true;
+    }
+
+    function generatePrimes() {
+      const start = parseInt(document.getElementById("start").value);
+      const end = parseInt(document.getElementById("end").value);
+      const output = document.getElementById("output");
+
+      if (isNaN(start) || isNaN(end) || start > end) {
+        output.value = "Please enter valid start and end numbers.";
+        return;
+      }
+
+      let primes = [];
+      for (let i = start; i <= end; i++) {
+        if (isPrime(i)) {
+          primes.push(i);
+        }
+      }
+
+      output.value = primes.length > 0 ? primes.join(", ") : "No prime numbers found in the range.";
+    }
+  </script>
+
+</body>
+</html>

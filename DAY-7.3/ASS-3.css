@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.starred-list {
+    list-style: none;
+    padding: 0;
+}
+
+.starred-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.starred-list li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    color: red;
+    font-size: 20px;
+}

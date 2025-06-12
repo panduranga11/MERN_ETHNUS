@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+    <script>
+        function checkGrade() {
+            let input = prompt("Enter marks (1 to 100):");
+            let marks = parseFloat(input);
+            let resultDiv = document.getElementById("result");
+
+            if (isNaN(marks) || marks < 1 || marks > 100) {
+                resultDiv.textContent = "❌ Please enter valid marks between 1 and 100.";
+                resultDiv.style.color = "red";
+                return;
+            }
+
+            let grade = "";
+
+            if (marks >= 90) {
+                grade = "A+";
+            } else if (marks >= 80) {
+                grade = "A";
+            } else if (marks >= 70) {
+                grade = "B";
+            } else if (marks >= 60) {
+                grade = "C";
+            } else if (marks >= 50) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            resultDiv.textContent = `✅ Your Grade is: ${grade}`;
+            resultDiv.style.color = "green";
+        }
+
+        // Run as soon as the page loads
+        window.onload = checkGrade;
+    </script>
+</head>
+<body>
+    <h2>Grade Checker</h2>
+    <div id="result">Waiting for marks input...</div>
+</body>
+</html>

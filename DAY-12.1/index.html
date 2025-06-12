@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: blue;
+        }
+    </style>
+    <script>
+        function checkNumber() {
+            let input = prompt("Enter a number:");
+            let number = parseFloat(input);
+            let resultDiv = document.getElementById("result");
+
+            if (isNaN(number)) {
+                resultDiv.textContent = "❌ Please enter a valid number.";
+            } else if (number > 0) {
+                resultDiv.textContent = "✅ The number is positive.";
+            } else if (number < 0) {
+                resultDiv.textContent = "🔻 The number is negative.";
+            } else {
+                resultDiv.textContent = "🟰 The number is zero.";
+            }
+        }
+
+        // Call the function when page loads
+        window.onload = checkNumber;
+    </script>
+</head>
+<body>
+    <h2>Number Sign Checker</h2>
+    <div id="result">Waiting for input...</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Function Types</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .output {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Types of Functions in JavaScript</h1>
+
+  <div class="output" id="result"></div>
+
+  <script>
+    let result = "";
+
+    // 1. Named Function
+    function add(a, b) {
+      return a + b;
+    }
+    result += "<strong>1. Named Function (add):</strong><br>";
+    result += "add(5, 3) = " + add(5, 3) + "<br><br>";
+
+    // 2. Anonymous Function
+    const sub = function(a, b) {
+      return a - b;
+    };
+    result += "<strong>2. Anonymous Function (assigned to variable 'sub'):</strong><br>";
+    result += "sub(10, 4) = " + sub(10, 4) + "<br><br>";
+
+    // 3. Arrow Function
+    const mul = (a, b) => a * b;
+    result += "<strong>3. Arrow Function (mul):</strong><br>";
+    result += "mul(4, 3) = " + mul(4, 3) + "<br><br>";
+
+    // 4. Function Expression
+    const divide = function(a, b) {
+      return a / b;
+    };
+    result += "<strong>4. Function Expression (divide):</strong><br>";
+    result += "divide(20, 4) = " + divide(20, 4) + "<br><br>";
+
+    // 5. Immediately Invoked Function Expression (IIFE)
+    (function() {
+      result += "<strong>5. IIFE (Immediately Invoked Function Expression):</strong><br>";
+      result += "This function runs automatically!<br><br>";
+    })();
+
+    // 6. Callback Function
+    function greet(name, callback) {
+      return callback(name);
+    }
+    function sayHello(name) {
+      return "Hello, " + name + "!";
+    }
+    result += "<strong>6. Callback Function:</strong><br>";
+    result += "greet('Tarun', sayHello) = " + greet("Tarun", sayHello) + "<br><br>";
+
+    // 7. Constructor Function
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    const person1 = new Person("Tarun", 20);
+    result += "<strong>7. Constructor Function:</strong><br>";
+    result += "new Person('Tarun', 20) → Name: " + person1.name + ", Age: " + person1.age + "<br><br>";
+
+    // 8. Recursive Function
+    function factorial(n) {
+      if (n === 0) return 1;
+      return n * factorial(n - 1);
+    }
+    result += "<strong>8. Recursive Function (factorial):</strong><br>";
+    result += "factorial(5) = " + factorial(5) + "<br><br>";
+
+    // Show result
+    document.getElementById("result").innerHTML = result;
+  </script>
+
+</body>
+</html>
